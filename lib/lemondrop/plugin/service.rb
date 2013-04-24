@@ -6,7 +6,7 @@ class Lemondrop::Plugin::Service
   class << self
 
     ##
-    # Start the Sequel connection with the configured database
+    # Start the Redis connection with the configured database
     def start(config)
       params = config.to_hash.select { |k,v| !v.nil? }
       unless params[:uri].nil? || params[:uri].empty?
@@ -28,7 +28,7 @@ class Lemondrop::Plugin::Service
     end
 
     ##
-    # Start the Sequel connection with the configured database
+    # Start the Redis connection with the configured database
     #
     # @param params [Hash] Options to establish the database connection
     def establish_connection(params)
