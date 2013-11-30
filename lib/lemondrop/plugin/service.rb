@@ -32,8 +32,8 @@ class Lemondrop::Plugin::Service
     #
     # @param params [Hash] Options to establish the Redis connection
     def establish_connection(params)
-      ::Redis.new params
       logger.info "Lemondrop connected to Redis at #{params[:host]}:#{params[:port]}"
+      ::Redis.new params
     end
   end # class << self
 end # Service
