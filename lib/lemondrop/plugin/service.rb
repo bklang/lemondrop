@@ -6,7 +6,7 @@ class Lemondrop::Plugin::Service
   class << self
 
     ##
-    # Start the Sequel connection with the configured database
+    # Start the Redis connection with the configured database
     def start(config)
       params = config.to_hash.select { |k,v| !v.nil? }
       unless params[:uri].nil? || params[:uri].empty?
@@ -22,19 +22,18 @@ class Lemondrop::Plugin::Service
     end
 
     ##
-    # Stop the database connection
+    # Stop the redis connection
     def stop
       logger.warn "Todo: Close down Redis connections"
     end
 
     ##
-    # Start the Sequel connection with the configured database
+    # Start the Redis connection with the configured redis
     #
-    # @param params [Hash] Options to establish the database connection
+    # @param params [Hash] Options to establish the redis connection
     def establish_connection(params)
       ::Redis.new params
     end
-
   end # class << self
 end # Service
 
