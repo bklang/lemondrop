@@ -18,5 +18,4 @@ class Lemondrop::Plugin < Adhearsion::Plugin
   init :lemondrop do
     Service.start Adhearsion.config[:lemondrop]
   end
-
 end

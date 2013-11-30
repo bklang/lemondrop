@@ -22,19 +22,19 @@ class Lemondrop::Plugin::Service
     end
 
     ##
-    # Stop the database connection
+    # Stop the redis connection
     def stop
       logger.warn "Todo: Close down Redis connections"
     end
 
     ##
-    # Start the Redis connection with the configured database
+    # Start the connection to the configured Redis server
     #
-    # @param params [Hash] Options to establish the database connection
+    # @param params [Hash] Options to establish the Redis connection
     def establish_connection(params)
       ::Redis.new params
+      logger.info "Lemondrop connected to Redis at #{params[:host]}:#{params[:port]}"
     end
-
   end # class << self
 end # Service
 
