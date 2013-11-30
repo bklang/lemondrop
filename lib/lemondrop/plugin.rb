@@ -17,6 +17,6 @@ class Lemondrop::Plugin < Adhearsion::Plugin
 
   init :lemondrop do
     Service.start Adhearsion.config[:lemondrop]
+    logger.info "Lemondrop has been started"
   end
-
 end
