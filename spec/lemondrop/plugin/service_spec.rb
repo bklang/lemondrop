@@ -27,6 +27,13 @@ describe Lemondrop::Plugin::Service do
       subject.should_receive(:establish_connection).once.with(expected_params)
       subject.start config
     end
+  end
 
+  describe '#establish_connection' do
+    let(:params) { {} }
+
+    it "returns a Redis instance" do
+      subject.establish_connection(params).should be_a Redis
+    end
   end
 end
