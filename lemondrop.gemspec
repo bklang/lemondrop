@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = %q{Redis plugin for Adhearsion}
   s.description = %q{This gem provides a plugin for Adhearsion, allowing you to create and use Redis as a queue or data source in your Adhearsion application.}
+  s.license     = 'MIT'
 
   s.rubyforge_project = "lemondrop"
 
