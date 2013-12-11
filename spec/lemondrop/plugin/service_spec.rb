@@ -7,9 +7,9 @@ describe Lemondrop::Plugin::Service do
     it 'should allow specifying a URI for the connection information' do
       config = {uri: 'redis://redisuser:redispass@foo.bar.com:9530/'}
       expected_params = {
-        user: 'redisuser',
+        username: 'redisuser',
         password: 'redispass',
-        host: 'foo.bar.com',
+        hostname: 'foo.bar.com',
         port: 9530
       }
       subject.should_receive(:establish_connection).once.with(expected_params)
@@ -19,9 +19,9 @@ describe Lemondrop::Plugin::Service do
     it 'should default to the correct port if the URI does not specify one' do
       config = {uri: 'redis://redisuser:redispass@foo.bar.com/', port: 6379}
       expected_params = {
-        user: 'redisuser',
+        username: 'redisuser',
         password: 'redispass',
-        host: 'foo.bar.com',
+        hostname: 'foo.bar.com',
         port: 6379
       }
       subject.should_receive(:establish_connection).once.with(expected_params)

@@ -10,11 +10,11 @@ class Lemondrop::Plugin::Service
     def start(config)
       params = config.to_hash.select { |k,v| !v.nil? }
       unless params[:uri].nil? || params[:uri].empty?
-        redis_uri = URI.parse params[:uri]
-        params[:user] = redis_uri.user
-        params[:password] = redis_uri.password
-        params[:host] = redis_uri.host
-        params[:port] = redis_uri.port || params[:port]
+        uri = URI.parse params[:uri]
+        params[:username] = uri.user
+        params[:password] = uri.password
+        params[:hostname] = uri.hostname
+        params[:port] = uri.port || params[:port]
         params.delete :uri
       end
 
