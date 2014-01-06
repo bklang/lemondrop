@@ -1,3 +1,6 @@
+# [0.1.2](https://github.com/bklang/lemondrop/compare/v0.1.1...v0.1.2) - [2014-01-06](https://rubygems.org/gems/lemondrop/versions/0.1.2)
+* Fix using Redis with no password set
+
 # [0.1.1](https://github.com/bklang/lemondrop/compare/v0.1.0...v0.1.1) - [2013-12-11](https://rubygems.org/gems/lemondrop/versions/0.1.1)
 * Fix Redis accessors on Lemondrop constant
 
