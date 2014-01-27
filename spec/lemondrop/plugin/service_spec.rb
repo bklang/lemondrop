@@ -32,8 +32,8 @@ describe Lemondrop::Plugin::Service do
   describe '#establish_connection' do
     let(:params) { {} }
 
-    it "returns a Redis instance" do
-      subject.establish_connection(params).should be_a Redis
+    it "returns a Redis::Namespace instance" do
+      subject.establish_connection(params).should be_a Redis::Namespace
     end
   end
 end

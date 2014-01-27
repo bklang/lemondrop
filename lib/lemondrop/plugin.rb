@@ -1,4 +1,4 @@
-require 'redis'
+require 'redis-namespace'
 
 class Lemondrop::Plugin < Adhearsion::Plugin
   extend ActiveSupport::Autoload
@@ -13,6 +13,7 @@ class Lemondrop::Plugin < Adhearsion::Plugin
     host        'localhost', :desc => 'host where the database is running'
     port        6379       , :desc => 'port where the database is listening'
     socket      ''         , :desc => 'path to Unix socket where Redis is listening (Optional; to use, set host and port to nil)'
+    namespace   ''         , :desc => 'namespace to prefix to all keys'
   end
 
   init :lemondrop do
